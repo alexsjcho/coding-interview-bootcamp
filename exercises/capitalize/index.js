@@ -8,13 +8,31 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-  const words = [];
-  for (let word of str.split(' ')) {
-    words.push(word[0].toUpperCase() + word.slice(1));
+  let result = str[0].toUpperCase();
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === ' ') {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
   }
-
-  return words.join(' ');
+  return result;
 }
 
 console.log(capitalize('big small medium large'));
 module.exports = capitalize;
+
+/* 
+
+#1 solution
+function capitalize(str) {
+    const words = [];
+    for (let word of str.split(' ')) {
+      words.push(word[0].toUpperCase() + word.slice(1));
+    }
+  
+    return words.join(' ');
+  }
+
+
+*/
