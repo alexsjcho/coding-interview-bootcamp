@@ -8,6 +8,18 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
+  const matches = str.match(/[aeiou]/gi);
+  return matches ? matches.length : 0;
+}
+
+console.log(vowels('Yo whats up my man, baby!'));
+
+module.exports = vowels;
+
+/* 
+Iterative Solution
+
+function vowels(str) {
   let count = 0;
   const isVowels = ['a', 'e', 'i', 'o', 'u'];
   for (let char of str.toLowerCase()) {
@@ -18,6 +30,5 @@ function vowels(str) {
   return count;
 }
 
-console.log(vowels('Yo whats up my man, baby!'));
 
-module.exports = vowels;
+*/
