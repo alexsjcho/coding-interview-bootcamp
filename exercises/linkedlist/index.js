@@ -13,6 +13,19 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+  insertFirst(data) {
+    const node = new Node(data, this.head);
+  }
+
+  size() {
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      counter++;
+      node = node.next;
+    }
+  }
 }
 
 const list = new LinkedList();
