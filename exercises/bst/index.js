@@ -28,6 +28,18 @@ class Node {
       this.right = new Node(data);
     }
   }
+  contains(data) {
+    //check if data is the same as data
+    if (this.data === data) {
+      return this;
+    }
+    if (this.data < data && this.right) {
+      return this.rightcontains(data);
+    } else if (this.data > data && this.left) {
+      return this.left.contains(data);
+    }
+    return null;
+  }
 }
 
 module.exports = Node;
